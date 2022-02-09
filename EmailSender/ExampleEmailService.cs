@@ -14,7 +14,7 @@ public class ExampleEmailService: BackgroundService
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-            using var timer = new PeriodicTimer(TimeSpan.FromSeconds(5));
+            using var timer = new PeriodicTimer(TimeSpan.FromHours(1));
             var sw = Stopwatch.StartNew();
             while (await timer.WaitForNextTickAsync(stoppingToken))
             {
